@@ -1,0 +1,19 @@
+.formContainer {
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+}
+
+.titleLabel {
+    margin-right: 20px;
+}
+
+.appointmentForm div {
+    margin-top: 10px;
+}
+
+/* button {
+    margin-top: 30px;
+    background-color: #0caacd;
+} */

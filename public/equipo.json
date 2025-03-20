@@ -1,0 +1,182 @@
+[
+  {
+    "nombre": "Dr. Felipe Muñoz",
+    "imagen": "doc_01.jpg",
+    "especialidad": "Gastroentereología",
+    "resumen": "El Dr. Felipe Muñoz es un gastroenterólogo con amplia experiencia en el diagnóstico y tratamiento de trastornos digestivos. Su enfoque personalizado y basado en evidencia asegura la mejora de la calidad de vida de sus pacientes a través de tratamientos efectivos y seguimiento cercano.",
+    "años_experiencia": 8,
+    "valor_consulta": 30.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes a Viernes: 9:00 - 17:00", "Sábado: 9:00 - 13:00"],
+      "contacto": {
+        "telefono": "+56 9 7812 3456",
+        "email": "fmunoz@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Leopoldo Contreras",
+    "imagen": "doc_02.jpg",
+    "especialidad": "Cardiología",
+    "resumen": "El Dr. Leopoldo Contreras es un cardiólogo especializado en el manejo de enfermedades cardiovasculares. Ofrece un enfoque integral y personalizado para el diagnóstico y tratamiento de condiciones cardíacas, utilizando tecnologías avanzadas y métodos basados en evidencia.",
+    "años_experiencia": 18,
+    "valor_consulta": 30.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes a Viernes: 8:00 - 16:00"],
+      "contacto": {
+        "telefono": "+56 9 5432 1987",
+        "email": "lcontreras@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Alejandro Figueroa",
+    "imagen": "doc_03.jpg",
+    "especialidad": "Psicología",
+    "resumen": "El Dr. Alejandro Figueroa es un especialista en salud mental que utiliza técnicas basadas en evidencia y un enfoque empático para tratar trastornos emocionales y psicológicos. Ayuda a sus pacientes a superar desafíos y mejorar su bienestar y calidad de vida de manera integral.",
+    "años_experiencia": 3,
+    "valor_consulta": 35.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes, Miércoles y Viernes: 10:00 - 18:00"],
+      "contacto": {
+        "telefono": "+56 9 1234 5678",
+        "email": "afigueroa@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Francisco Carrasco",
+    "imagen": "doc_04.jpg",
+    "especialidad": "Cardiología",
+    "resumen": "El Dr. Francisco Carrasco es un cardiólogo experimentado especializado en el diagnóstico y tratamiento de enfermedades cardíacas. Combina su experiencia clínica con un enfoque personalizado para asegurar el bienestar de sus pacientes, brindando atención y seguimiento continuo.",
+    "años_experiencia": 22,
+    "valor_consulta": 30.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Martes y Jueves: 9:00 - 17:00", "Sábado: 10:00 - 14:00"],
+      "contacto": {
+        "telefono": "+56 9 2178 9654",
+        "email": "fcarrasco@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Nicolás Rivera",
+    "imagen": "doc_05.jpg",
+    "especialidad": "Traumatología",
+    "resumen": "El Dr. Nicolás Rivera es un traumatólogo con más de 15 años de experiencia en lesiones musculoesqueléticas, desde fracturas complejas hasta rehabilitación postquirúrgica de deportistas. Integra tecnología avanzada y protocolos personalizados para asegurar la mejor recuperación.",
+    "años_experiencia": 5,
+    "valor_consulta": 40.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes a Viernes: 8:00 - 16:00"],
+      "contacto": {
+        "telefono": "+56 9 1723 4890",
+        "email": "nrivera@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dra. Valeria Sánchez",
+    "imagen": "doc_06.jpg",
+    "especialidad": "Traumatología",
+    "resumen": "La Dra. Valeria Sánchez es especialista en traumatología deportiva, con más de 10 años de experiencia. Ha trabajado con atletas de alto nivel y aficionados, ayudándolos a superar lesiones y mejorar su rendimiento mediante técnicas mínimamente invasivas y un enfoque funcional.",
+    "años_experiencia": 12,
+    "valor_consulta": 40.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Martes y Jueves: 10:00 - 18:00"],
+      "contacto": {
+        "telefono": "+56 9 2589 0123",
+        "email": "vsanchez@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Martín Pérez",
+    "imagen": "doc_07.jpg",
+    "especialidad": "Traumatología",
+    "resumen": "El Dr. Martín Pérez es un cirujano traumatológico especializado en intervenciones reconstructivas y en el tratamiento de patologías crónicas. Con más de 12 años de experiencia, utiliza técnicas innovadoras y participa en estudios sobre prótesis de última generación y terapias regenerativas.",
+    "años_experiencia": 11,
+    "valor_consulta": 45.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Miércoles y Viernes: 9:00 - 15:00"],
+      "contacto": {
+        "telefono": "+56 9 1945 6234",
+        "email": "mperez@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Andrés Fuentes",
+    "imagen": "doc_08.jpg",
+    "especialidad": "Psicología",
+    "resumen": "El Dr. Andrés Fuentes es psiquiatra con más de 10 años de experiencia en el tratamiento de trastornos de ansiedad, depresión y estrés postraumático. Combina terapia cognitivo-conductual y manejo de medicamentos cuando es necesario, ofreciendo soluciones personalizadas y efectivas.",
+    "años_experiencia": 10,
+    "valor_consulta": 25.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes a Jueves: 11:00 - 19:00"],
+      "contacto": {
+        "telefono": "+56 9 2367 8910",
+        "email": "afuentes@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dra. Camila Ríos",
+    "imagen": "doc_09.jpg",
+    "especialidad": "Gastroentereología",
+    "resumen": "La Dra. Camila Ríos se especializa en la prevención y tratamiento de enfermedades gastrointestinales. Ofrece atención personalizada y un enfoque integral, siempre buscando mejorar la salud de sus pacientes mediante un cuidado cercano y de calidad.",
+    "años_experiencia": 3,
+    "valor_consulta": 20.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes a Viernes: 8:00 - 16:00"],
+      "contacto": {
+        "telefono": "+56 9 1234 5670",
+        "email": "crios@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Pablo Ortiz",
+    "imagen": "doc_10.jpg",
+    "especialidad": "Traumatología",
+    "resumen": "El Dr. Pablo Ortiz es traumatólogo con experiencia en tratamientos para la rodilla deportiva. Se dedica a aplicar técnicas modernas para asegurar la salud y el bienestar de sus pacientes, brindando un trato cercano y asegurando su satisfacción con el proceso de recuperación.",
+    "años_experiencia": 2,
+    "valor_consulta": 20.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Martes y Jueves: 9:00 - 17:00", "Sábado: 9:00 - 13:00"],
+      "contacto": {
+        "telefono": "+56 9 2345 6789",
+        "email": "portiz@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dr. Ignacio Fernández",
+    "imagen": "doc_11.jpg",
+    "especialidad": "Gastroentereología",
+    "resumen": "El Dr. Ignacio Fernández es experto en nutrición clínica, especializado en planes alimenticios personalizados. Su enfoque promueve estilos de vida saludables, ayudando a sus pacientes a mejorar su bienestar físico y emocional mediante la adopción de hábitos saludables.",
+    "años_experiencia": 4,
+    "valor_consulta": 25.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes, Miércoles y Viernes: 10:00 - 18:00"],
+      "contacto": {
+        "telefono": "+56 9 3456 7890",
+        "email": "ifernandez@nursing.cl"
+      }
+    }
+  },
+  {
+    "nombre": "Dra. Sofía Gutiérrez",
+    "imagen": "doc_12.jpg",
+    "especialidad": "Cardiología",
+    "resumen": "La Dra. Sofía Gutiérrez es cardióloga con experiencia en el diagnóstico y tratamiento de enfermedades cardíacas. Su enfoque se centra en la prevención y el uso de técnicas innovadoras para mejorar la salud cardiovascular de sus pacientes, contribuyendo a su bienestar general.",
+    "años_experiencia": 1,
+    "valor_consulta": 20.000,
+    "informacion_adicional": {
+      "horarios_disponibles": ["Lunes a Viernes: 9:00 - 15:00"],
+      "contacto": {
+        "telefono": "+56 9 4567 8901",
+        "email": "sgutierrez@nursing.cl"
+      }
+    }
+  }
+]

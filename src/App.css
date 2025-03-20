@@ -1,0 +1,43 @@
+/* * {
+  outline: 1px red dashed;
+} */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.card {
+  position: absolute;
+  height: 46rem;
+  position: relative;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0.1rem 2.4rem 0 rgba(60, 60, 60, 0.5);
+  overflow: hidden;
+}
+
+.card-title {
+  position: absolute;
+  margin-top: -16px;
+  left: 0; 
+  width: 100%; 
+  background-color: #ff2a6b;
+  color: #fff;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+.card-info {
+  margin-top: 55px;
+}
+
+p {
+  color: #6c6c6c
+}

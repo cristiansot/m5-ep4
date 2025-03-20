@@ -42,12 +42,12 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
     doctor: Yup.string().required("Debes seleccionar un doctor"),
     appointmentDate: Yup.date()
       .required("Debes seleccionar una fecha")
-      .min(new Date(), "La fecha no puede ser en el pasado"),
+      .min(new Date().toISOString().split("T")[0], "La fecha no puede ser en el pasado"),
   });
 
   const submitAppointment = async (values: AppointmentValues) => {
     setIsSubmitting(true);
-    setApiResponse(null); 
+    setApiResponse(null);
 
     try {
       const response = await fetch("http://localhost:5001/api/appointments", {
@@ -67,12 +67,12 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
       const data = await response.json();
       setApiResponse("Cita creada con éxito");
       console.log("Cita creada:", data);
-      onAppointmentSubmit(values); 
+      onAppointmentSubmit(values);
     } catch (error: any) {
       setApiResponse(`Error: ${error.message}`);
       console.error("Error al enviar la cita:", error);
     } finally {
-      setIsSubmitting(false); 
+      setIsSubmitting(false);
     }
   };
 
@@ -88,10 +88,10 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           submitAppointment(values);
-          resetForm(); 
+          resetForm();
         }}
       >
-        {() => (
+        {({ errors, touched }) => (
           <Form className="appointmentForm">
             <div>
               <label className="titleLabel" htmlFor="patientName">
@@ -104,11 +104,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 placeholder="Nombre completo"
                 innerRef={patientNameRef}
               />
-              <ErrorMessage
-                name="patientName"
-                component="div"
-                style={{ color: "red" }}
-              />
+              {errors.patientName && touched.patientName && (
+                <div style={{ color: "red" }}>{errors.patientName}</div>
+              )}
             </div>
 
             <div>
@@ -123,11 +121,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
                   </option>
                 ))}
               </Field>
-              <ErrorMessage
-                name="doctor"
-                component="div"
-                style={{ color: "red" }}
-              />
+              {errors.doctor && touched.doctor && (
+                <div style={{ color: "red" }}>{errors.doctor}</div>
+              )}
             </div>
 
             <div>
@@ -135,11 +131,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 Fecha de la Cita
               </label>
               <Field type="date" id="appointmentDate" name="appointmentDate" />
-              <ErrorMessage
-                name="appointmentDate"
-                component="div"
-                style={{ color: "red" }}
-              />
+              {errors.appointmentDate && touched.appointmentDate && (
+                <div style={{ color: "red" }}>{errors.appointmentDate}</div>
+              )}
             </div>
 
             <button

@@ -1,10 +1,21 @@
+### Aprendizaje Basado en Proyectos: Mejorando la Web del Hospital con APIs, TypeScript, y Seguridad
+
 ## Ejecutar el servidor
 
 - **cd server:**
 
   ```bash
+   npm start
+   ```
+
+   ## Ejecutar Cliente
+
+- **cd m5-ep4:**
+
+  ```bash
    npm run dev
    ```
+
 ## Accesos de Usuarios
 
 - **Administrador (`admin`)**:

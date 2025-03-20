@@ -1,17 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import useAppointmentFormValidation from "../hooks/useAppointmentFormValidation";  
+import * as Yup from "yup";
 import "../assets/css/form.css";
 
 interface Doctor {
   nombre: string;
   especialidad: string;
-}
-
-interface AppointmentFormProps {
-  doctors: Doctor[];
-  onAppointmentSubmit: (values: AppointmentValues) => void;
-  token: string;
 }
 
 interface AppointmentValues {
@@ -20,13 +14,18 @@ interface AppointmentValues {
   appointmentDate: string;
 }
 
+interface AppointmentFormProps {
+  doctors: Doctor[];
+  onAppointmentSubmit: (values: AppointmentValues) => void;
+  token: string;
+}
+
 const AppointmentForm: React.FC<AppointmentFormProps> = ({
   doctors,
   onAppointmentSubmit,
   token,
 }) => {
   const patientNameRef = useRef<HTMLInputElement>(null);
-  const { errors, validate } = useAppointmentFormValidation();  
   const [apiResponse, setApiResponse] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -36,17 +35,19 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
     }
   }, []);
 
-  const submitAppointment = async (values: any) => {
+  const validationSchema = Yup.object({
+    patientName: Yup.string()
+      .required("El nombre del paciente es obligatorio")
+      .min(3, "Debe tener al menos 3 caracteres"),
+    doctor: Yup.string().required("Debes seleccionar un doctor"),
+    appointmentDate: Yup.date()
+      .required("Debes seleccionar una fecha")
+      .min(new Date(), "La fecha no puede ser en el pasado"),
+  });
+
+  const submitAppointment = async (values: AppointmentValues) => {
     setIsSubmitting(true);
     setApiResponse(null); 
-
-    const validationErrors = validate(values);
-
-    if (Object.keys(validationErrors).length > 0) {
-      setApiResponse("Por favor corrige los errores del formulario");
-      setIsSubmitting(false);
-      return;
-    }
 
     try {
       const response = await fetch("http://localhost:5001/api/appointments", {
@@ -59,18 +60,19 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
       });
 
       if (!response.ok) {
-        throw new Error("Error al enviar la cita");
+        const errorData = await response.json();
+        throw new Error(errorData?.message || "Error al enviar la cita");
       }
 
       const data = await response.json();
       setApiResponse("Cita creada con éxito");
       console.log("Cita creada:", data);
       onAppointmentSubmit(values); 
-    } catch (error) {
+    } catch (error: any) {
       setApiResponse(`Error: ${error.message}`);
       console.error("Error al enviar la cita:", error);
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); 
     }
   };
 
@@ -83,6 +85,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
           doctor: "",
           appointmentDate: "",
         }}
+        validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           submitAppointment(values);
           resetForm(); 

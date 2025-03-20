@@ -4,9 +4,9 @@ import Home from "./components/Home";
 import EquipoMedico from "./components/EquipoMedico";
 import Testimonios from "./components/Testimonios";
 import AppNavbar from "./components/Navbar";
-import ProtectedRoute from "./routes/ProtectedRoute";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import AppointmentForm from "./components/AppointmentForm";
+import AppointmentList from "./components/AppointmentList";
 import Carousel from './components/Carousel';
 import './App.css';
 
@@ -22,7 +22,7 @@ interface AppointmentValues {
 }
 
 function App() {
-  const { token } = useAuth(); 
+  const { token } = useAuth();
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const [appointments, setAppointments] = useState<AppointmentValues[]>([]);
 
@@ -40,10 +40,6 @@ function App() {
       console.warn("No hay token, no se pueden cargar las citas.");
       return;
     }
-
-    console.log("Cargando citas desde el backend...");
-    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
-    console.log("URL de la API usada:", apiUrl);
 
     fetch(`${apiUrl}/appointments`, {
       headers: {
@@ -63,6 +59,20 @@ function App() {
     setAppointments((prevAppointments) => [...prevAppointments, values]);
   };
 
+  const handleDeleteAppointment = (id: number) => {
+    setAppointments(appointments.filter((appointment) => appointment.id !== id));
+  };
+
+  const handleUpdateAppointment = (id: number, updatedName: string) => {
+    setAppointments((prevAppointments) => 
+      prevAppointments.map((appointment) => 
+        appointment.id === id 
+          ? { ...appointment, patientName: updatedName } 
+          : appointment
+      )
+    );
+  };
+  
   return (
     <AuthProvider>
       <Router>
@@ -77,24 +87,15 @@ function App() {
             element={
               <div>
                 <Carousel />
-                <h2>Citas Agendadas</h2>
-                <ul>
-                  {appointments.length > 0 ? (
-                    appointments.map((appointment, index) => (
-                      <li key={index}>
-                        <strong>{appointment.patientName}</strong> - {appointment.doctor} -{" "}
-                        {new Date(appointment.appointmentDate).toLocaleDateString()}
-                      </li>
-                    ))
-                  ) : (
-                    <li>No hay citas agendadas.</li>
-                  )}
-                </ul>
-
+                <AppointmentList 
+                  appointments={appointments}
+                  onDelete={handleDeleteAppointment}
+                  onUpdate={handleUpdateAppointment}
+                />
                 <AppointmentForm
                   doctors={doctors}
                   onAppointmentSubmit={handleAppointmentSubmit}
-                  token={token} 
+                  token={token}
                 />
               </div>
             }

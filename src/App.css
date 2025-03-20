@@ -41,3 +41,8 @@
 p {
   color: #6c6c6c
 }
+
+button {
+  display: inline-block !important;
+  visibility: visible !important;
+}
